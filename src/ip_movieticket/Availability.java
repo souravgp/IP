@@ -13,6 +13,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import static jdk.nashorn.internal.runtime.Debug.id;
 
+
 /**
  *
  * @author soura
@@ -39,7 +40,6 @@ public class Availability extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         t1 = new javax.swing.JTable();
         cb1 = new javax.swing.JComboBox<>();
-        Show = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         cb3 = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
@@ -48,13 +48,13 @@ public class Availability extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         tf2 = new javax.swing.JTextField();
         tf3 = new javax.swing.JTextField();
-        Book = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         cb2 = new javax.swing.JComboBox<>();
         tf1 = new javax.swing.JTextField();
         Search = new javax.swing.JButton();
         Check = new javax.swing.JButton();
+        Book = new javax.swing.JButton();
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -85,22 +85,15 @@ public class Availability extends javax.swing.JFrame {
             }
         });
 
-        Show.setText("Show");
-        Show.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ShowActionPerformed(evt);
-            }
-        });
-
         jLabel1.setText("Sl_no");
 
-        cb3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1st_Aug", "2nd_Aug", "3rd_Aug", "4th_Aug" }));
+        cb3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1st_Aug", "2nd_Aug", "3rd_Aug" }));
 
         jLabel3.setText("Date");
 
         jLabel4.setText("Of August");
 
-        jLabel5.setText("Number of Seats Availability");
+        jLabel5.setText("Number of Seats Available");
 
         jLabel6.setText("Number of seats required");
 
@@ -113,8 +106,6 @@ public class Availability extends javax.swing.JFrame {
                 tf3ActionPerformed(evt);
             }
         });
-
-        Book.setText("BOOK");
 
         jLabel2.setText("Rating");
 
@@ -163,6 +154,8 @@ public class Availability extends javax.swing.JFrame {
             }
         });
 
+        Book.setText("Book");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -171,17 +164,22 @@ public class Availability extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 504, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(8, 8, 8)
-                        .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
-                        .addComponent(cb1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(8, 8, 8)
+                                .addComponent(jLabel1)
+                                .addGap(18, 18, 18)
+                                .addComponent(cb1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(64, 64, 64)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel5)
                                 .addGap(18, 18, 18)
-                                .addComponent(tf2))
+                                .addComponent(tf2, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel3)
                                 .addGap(18, 18, 18)
@@ -189,20 +187,12 @@ public class Availability extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jLabel4))
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(Check)
-                                    .addComponent(jLabel6))
+                                .addComponent(jLabel6)
                                 .addGap(18, 18, 18)
-                                .addComponent(tf3, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(36, 36, 36)
-                                .addComponent(Show)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Book, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(51, 51, 51)))
+                                .addComponent(tf3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(Book)
+                                .addComponent(Check, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(59, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -216,11 +206,10 @@ public class Availability extends javax.swing.JFrame {
                     .addComponent(jLabel3)
                     .addComponent(jLabel4))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 32, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 123, Short.MAX_VALUE)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(68, 68, 68)
-                        .addComponent(Show))
+                        .addGap(18, 18, 18))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel5)
@@ -230,10 +219,10 @@ public class Availability extends javax.swing.JFrame {
                             .addComponent(jLabel6)
                             .addComponent(tf3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Check)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Book, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGap(18, 18, 18)
+                        .addComponent(Check, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(32, 32, 32)
+                        .addComponent(Book)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(63, 63, 63))
         );
@@ -253,42 +242,6 @@ public class Availability extends javax.swing.JFrame {
     private void cb1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cb1MousePressed
 
     }//GEN-LAST:event_cb1MousePressed
-
-    private void ShowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ShowActionPerformed
-        // TODO add your handling code here:
-        DefaultTableModel Model1=(DefaultTableModel)t1.getModel();
-       
-
-        try
-        {
-            Class.forName("java.sql.Driver");
-
-            Connection con=DriverManager.getConnection("jdbc:mysql://localhost/movie","root","password");
-            //Connection con=DriverManager.getConnection("jdbc:mysql://localhost/abcd","root","password");
-            Statement st=con.createStatement();
-            //String query="Select * from emp;";
-            ResultSet rs=st.executeQuery("Select * from mov;");
-            while (rs.next())
-            {
-                String sn=rs.getString("Sl_no");
-                String mn=rs.getString("Movie_name");
-                String str=rs.getString("Starring");
-                String rt=rs.getString("Rating");
-                String cpt=rs.getString("Cost_per_Ticket");
-                Model1.addRow(new Object[] {sn,mn,str,rt,cpt});
-
-            }
-            rs.close();
-            st.close();
-            con.close();
-
-        }
-
-        catch(Exception e)
-        {
-            JOptionPane.showMessageDialog(null,e);
-        }
-    }//GEN-LAST:event_ShowActionPerformed
 
     private void SearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchActionPerformed
         // TODO add your handling code here:
@@ -345,22 +298,50 @@ public class Availability extends javax.swing.JFrame {
          int m=Integer.parseInt(sln); 
          String dt=(String)cb3.getSelectedItem();
           DefaultTableModel Model1=(DefaultTableModel)t1.getModel();
+          int avl;
             try
         {
             Class.forName("java.sql.Driver");
 
             Connection con=DriverManager.getConnection("jdbc:mysql://localhost/movie","root","password");
-            //Connection con=DriverManager.getConnection("jdbc:mysql://localhost/abcd","root","password");
-           ResultSet rs;
-            Statement st=con.createStatement();
            
-            rs=st.executeQuery("Select "+dt+"from date where Sl_no ="+m+";");
+           ResultSet rs;
+            Statement st1=con.createStatement();
+           
+            rs=st1.executeQuery("Select "+dt+" from date where Sl_no ='"+m+"';");
             while (rs.next()) {
+                if(cb3.getSelectedIndex()==0)
+                tf2.setText(""+rs.getString("1st_Aug"));
+                if(cb3.getSelectedIndex()==1)
+                tf2.setText(""+rs.getString("2nd_Aug"));
+                if(cb3.getSelectedIndex()==2)
+                tf2.setText(""+rs.getString("3rd_Aug"));
       
           }
+            int t2=Integer.parseInt(tf2.getText());
+           if (t2<=0)
+           {tf3.setEditable(false);
+            JOptionPane.showMessageDialog(null,"Booking has been closed");
+           }
+           else
+           {int t3=Integer.parseInt(tf3.getText());
+           avl=t2-t3;
+           
+           JOptionPane.showMessageDialog(null,"Seats available="+avl);
+           }
+//Statement st2=con.createStatement();
+           
+       //     String query1=("Update date set "+dt+"='"+avl+"' where Sl_no='"+m+"';");
+         //      st2.executeUpdate(query1);
+           //    st2.close();      
+            
+           
+            
             rs.close();
-            st.close();
-            con.close();
+            
+           st1.close();
+           
+           con.close();
 
         }
 
@@ -368,9 +349,7 @@ public class Availability extends javax.swing.JFrame {
         {
             JOptionPane.showMessageDialog(null,e);
         }
-     int k;
-     k=10-id;
-     System.out.println(k);
+ 
      
      
         
@@ -417,7 +396,6 @@ public class Availability extends javax.swing.JFrame {
     private javax.swing.JButton Book;
     private javax.swing.JButton Check;
     private javax.swing.JButton Search;
-    private javax.swing.JButton Show;
     private javax.swing.JComboBox<String> cb1;
     private javax.swing.JComboBox<String> cb2;
     private javax.swing.JComboBox<String> cb3;
