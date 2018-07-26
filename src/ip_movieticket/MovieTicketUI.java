@@ -108,7 +108,12 @@ public class MovieTicketUI extends javax.swing.JFrame {
         // TODO add your handling code here:
          DefaultTableModel Model1=(DefaultTableModel)t1.getModel();
        
+int rows=Model1.getRowCount();
 
+        for(int i=1;i<=rows;i++)
+        {
+            Model1.removeRow(0);
+        }
         try
         {
             Class.forName("java.sql.Driver");
